@@ -1,5 +1,5 @@
 {
-    "name": "ERP Billing",
+    "name": "ERPBilling",
     "version": "1.0.0",
     "description": "Sistema de Bilhetagem.",
     "main": "app.js",
