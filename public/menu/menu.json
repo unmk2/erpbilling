@@ -1,0 +1,25 @@
+{
+    "lang":"pt-br",
+    "menu":{
+        "name":"Bilhetes",
+        "link":"/",
+        "menu_sub":{
+
+            "lotes":{
+                "name":"Lotes",
+                "link":"/lotes",
+                "class":""
+            },
+            "bilhetes":{
+                "name":"Bilhetes",
+                "link":"/bilhetes",
+                "class": ""
+            },
+            "bilehtes_dados":{
+                "name":"Bilhetes Dados",
+                "link":"/bilhetes_dados",
+                "class":""
+            }
+        }
+    }
+}

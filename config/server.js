@@ -35,5 +35,4 @@ consign()
     .include('config/dbSyncSql.js')
     .into(app);
     
-
 module.exports = app;

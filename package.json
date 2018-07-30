@@ -18,10 +18,10 @@
     "keywords": [
         "express"
     ],
-    "author": "Alexandre Sousa | Dheisson Sousa | Jonas Castro",
+    "author": "Alexandre Sousa | Dheisson Sousa | Jonas Castro | Fernando",
     "license": "GPL",
     "bugs": {
-        "url": ""
+        "url": "https://github.com/AlexandreSousa/erpbilling/issues"
     },
     "homepage": "http://erpbilling.com.br",
     "dependencies": {
