@@ -5,7 +5,7 @@ var connMysqlSync = function () {
 
     return new MySql({
         //host      : '165.227.55.153',
-        host: '192.168.88.8',
+        host: '172.17.0.3',
         user: 'root',
         password: '455ttte',
         database: 'billing'
