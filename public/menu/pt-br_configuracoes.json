@@ -1,0 +1,14 @@
+{
+    "lang":"pt-br",
+    "menu":{
+        "name":"Configurações",
+        "linkt":"/",
+        "menu_sub":{
+            "modulos":{
+                "name":"Modulos",
+                "link":"modulos",
+                "class":""
+            }
+        }
+    }
+}
