@@ -15,8 +15,8 @@ module.exports.menu = (app,req,res)=>{
          * Criamos um loop com os arquivos emcontrados no parametro fs.readdir 
          * abrimos cada arquivo separadamente e colocamos o seu conteudo em um objeto
          */
-        function reload() {
-            var obj = [];
+        //const reload = () => {
+            const obj = [];
             files.forEach(file => {
 
                 var results = JSON.parse(fs.readFileSync(patch + '/' + file, 'utf8'));
@@ -31,20 +31,24 @@ module.exports.menu = (app,req,res)=>{
                     obj.push(results);
                 }
             });
-            
-            retorno(obj)
+            //const resposta = await obj;
+            retorno(obj);
+            //console.log(obj);
             //return obj;
-        }
+        //}
         //console.log(reload());
-        return reload();
+        //const result = reload();
+        //console.log(result);
 
     });
 
-    function retorno(x) {
-        st = x;
+    function retorno(x){
+        //console.log(x);
+        st = this.x;
+
     }
-    
+    console.log(st);
     return st;
-   
-    
+    //console.log(retorno());
+      
 }

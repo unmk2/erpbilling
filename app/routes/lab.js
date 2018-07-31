@@ -7,7 +7,11 @@ module.exports = (app)=>{
     app.get('/get_menu', (req, res) => {
         var conn = app.config.dbSyncSql();
         var mem = app.app.controlles.menu.menu(app,req,res);
-        res.render('index', { menu: mem });
+
+        //var teste = require('/home/alexandre/VisualProject/erpbilling/app/controlles/menu.js')
+        
+        res.send(mem);
+        //res.render('index', { menu: mem });
 
     });
 
