@@ -44,7 +44,7 @@ module.exports.menu = (app,req,res)=>{
 
     function retorno(x){
         //console.log(x);
-        st = this.x;
+        st = x;
 
     }
     console.log(st);
