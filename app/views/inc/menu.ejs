@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Billing</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <% if(menu) {%>
+                
+                <%  for(var i = 0;menu.length > i;i++){ %>  
+                <% var dados = menu[i] %>
+                <% if(dados.menu.menu_sub){ %>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <%= dados.menu.name %>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        
+                        <% var obj = 0 %>
+                        <% for(var key in dados.sub) { %>
+                            <a class="dropdown-item" href="<%= dados.sub[key].link  %>"><%= dados.sub[key].name  %></a>
+
+                        <% } %>
+                        
+                    </div>
+                </li>
+                <% }else{ %>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= dados.menu.url %>"><%= dados.menu.name %></a>
+                </li>
+                <% } %>
+                
+                <% } %>
+
+                
+            <% } %>    
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Loja</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/sair">Sair</a>
+            </li>
+        </ul>
+    </div>
+</nav>

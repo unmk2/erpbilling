@@ -7,7 +7,7 @@
 
             "lotes":{
                 "name":"Lotes",
-                "link":"/lotes",
+                "link":"/page/lotes",
                 "class":""
             },
             "bilhetes":{
