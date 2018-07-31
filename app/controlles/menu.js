@@ -1,50 +1,39 @@
-module.exports.menu = (app,req,res)=>{ 
+/**
+ * Autor: Guilherme Kaercher
+ * @param {*} app 
+ * @param {*} req 
+ * @param {*} res 
+ */
+
+module.exports.menu = (app, req, res) => {
     var fs = require('fs');
-    var patch = 'public/menu';
+    var path = 'public/menu/';
     var conn = app.config.dbSyncSql();
 
+    // Aqui executamos uma consulta SQL e verificamos a tabela do login qual e o idioma
 
-    fs.readdir(patch, (err, files) => {
-        /**
-         * Aqui executamos uma consulta SQL e verificamos a tabela do login qual e o idioma
-         */
-        var linhas_login = conn.queueQuery(`SELECT * FROM login WHERE id = '1'`)();
-        var lang = linhas_login[0].lang;
+    var linhas_login = conn.queueQuery(`SELECT * FROM login WHERE id = '${req.session.login}'`)();
+    var lang = linhas_login[0].lang;
+    //const lang = 'pt-br';
 
-        /**
-         * Criamos um loop com os arquivos emcontrados no parametro fs.readdir 
-         * abrimos cada arquivo separadamente e colocamos o seu conteudo em um objeto
-         */
-        function reload() {
-            var obj = [];
-            files.forEach(file => {
+    console.log('lang : ' + lang);
 
-                var results = JSON.parse(fs.readFileSync(patch + '/' + file, 'utf8'));
-                // console.log(results.lang);
-                // console.log(lang);
+    var files = fs.readdirSync(path);
+    console.log('files: ' + files);
 
-                /**
-                 * Aqui fazemos a verificação da liguagem e mostramos o menu de acordo com o idioma do cliente
-                 */
-                if (results.lang == lang) {
-                    results.sub = results.menu.menu_sub;
-                    obj.push(results);
-                }
-            });
-            
-            retorno(obj)
-            //return obj;
+    const obj = [];
+    files.forEach(file => {
+
+        console.log('obj: ' + obj);
+        var results = JSON.parse(fs.readFileSync(path + file, 'utf8'));
+        console.log(results);
+
+        //Aqui fazemos a verificação da liguagem e mostramos o menu de acordo com o idioma do cliente
+        if (results.lang == lang) {
+            results.sub = results.menu.menu_sub;
+            obj.push(results);
         }
-        //console.log(reload());
-        return reload();
-
     });
+    return obj;
 
-    function retorno(x) {
-        st = x;
-    }
-    
-    return st;
-   
-    
 }
