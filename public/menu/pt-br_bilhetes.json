@@ -7,12 +7,12 @@
 
             "lotes":{
                 "name":"Lotes",
-                "link":"/page/lotes",
+                "link":"/lotes",
                 "class":""
             },
             "bilhetes":{
-                "name":"Bilhetes",
-                "link":"/bilhetes",
+                "name":"Bilhetes Horas",
+                "link":"/bilhetes_horas",
                 "class": ""
             },
             "bilehtes_dados":{
