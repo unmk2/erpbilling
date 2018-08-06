@@ -6,6 +6,13 @@
  */
 
 module.exports.menu = (app, req, res) => {
+    /** verifica se tem uma session iniciada */
+    if (req.session.autorizado) {
+
+    } else {
+        /** se não tiver uma session ativa redireciona para o login */
+        res.redirect('/');
+    }
     var fs = require('fs');
     var path = 'public/menu/';
     var conn = app.config.dbSyncSql();
@@ -16,17 +23,17 @@ module.exports.menu = (app, req, res) => {
     var lang = linhas_login[0].lang;
     //const lang = 'pt-br';
 
-    console.log('lang : ' + lang);
+    //console.log('lang : ' + lang);
 
     var files = fs.readdirSync(path);
-    console.log('files: ' + files);
+    //console.log('files: ' + files);
 
     const obj = [];
     files.forEach(file => {
 
-        console.log('obj: ' + obj);
+        //console.log('obj: ' + obj);
         var results = JSON.parse(fs.readFileSync(path + file, 'utf8'));
-        console.log(results);
+        //console.log(results);
 
         //Aqui fazemos a verificação da liguagem e mostramos o menu de acordo com o idioma do cliente
         if (results.lang == lang) {

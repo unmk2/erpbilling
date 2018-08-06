@@ -3,22 +3,26 @@
     "menu":{
         "name":"Bilhetes",
         "link":"/",
+        "ico":"icon-plus",
         "menu_sub":{
 
             "lotes":{
                 "name":"Lotes",
                 "link":"/lotes",
-                "class":""
+                "class":"",
+                "ico":"icon-codepen"
             },
             "bilhetes":{
                 "name":"Bilhetes Horas",
                 "link":"/bilhetes_horas",
-                "class": ""
+                "class": "",
+                "ico":"icon-clock-o"
             },
             "bilehtes_dados":{
                 "name":"Bilhetes Dados",
                 "link":"/bilhetes_dados",
-                "class":""
+                "class":"",
+                "ico":"icon-credit-card"
             }
         }
     }

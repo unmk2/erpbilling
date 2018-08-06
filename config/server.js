@@ -33,6 +33,7 @@ app.use(session({ // Setup Session Middleware
 consign()
     .include('app/routes')
     .include('app/controlles')
+    .include('app/model')
     .include('config/dbSyncSql.js')
     .into(app);
     

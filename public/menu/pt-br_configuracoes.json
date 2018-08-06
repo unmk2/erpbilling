@@ -3,11 +3,13 @@
     "menu":{
         "name":"Configurações",
         "linkt":"/",
+        "ico":"icon-tools",
         "menu_sub":{
             "modulos":{
-                "name":"Modulos",
-                "link":"modulos",
-                "class":""
+                "name":"Parametros",
+                "link":"/parametros",
+                "class":"",
+                "ico": "icon-computer-network-streamline"
             }
         }
     }

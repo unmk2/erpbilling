@@ -19,7 +19,7 @@
         "express"
     ],
     "author": "Alexandre Sousa | Dheisson Sousa | Jonas Castro | Fernando",
-    "license": "GPL",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/AlexandreSousa/erpbilling/issues"
     },

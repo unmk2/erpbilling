@@ -14,13 +14,13 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                        <%= dados.menu.name %>
+                       <i class="<%= dados.menu.ico %>"></i> <%= dados.menu.name %>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         
                         <% var obj = 0 %>
                         <% for(var key in dados.sub) { %>
-                            <a class="dropdown-item" href="<%= dados.sub[key].link  %>"><%= dados.sub[key].name  %></a>
+                            <a class="dropdown-item" href="<%= dados.sub[key].link  %>">  <i class="<%= dados.sub[key].ico  %>"></i> <%= dados.sub[key].name  %></a>
 
                         <% } %>
                         
@@ -28,7 +28,7 @@
                 </li>
                 <% }else{ %>
                 <li class="nav-item">
-                    <a class="nav-link" href="<%= dados.menu.url %>"><%= dados.menu.name %></a>
+                    <a class="nav-link" href="<%= dados.menu.url %>"><i class="<%= dados.menu.ico %>"></i> <%= dados.menu.name %></a>
                 </li>
                 <% } %>
                 

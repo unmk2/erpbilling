@@ -2,6 +2,22 @@
 
 <div class="container-fluid" >
     Lotes
+
+    <ul>
+        <% linhas.forEach((dados) => { %> 
+        <li><a href="/lotes.dell/<%= dados.id %>"><%= dados.id %> - <%= dados.username %></a> </li>
+        <% }) %>
+    </ul>
+
+
+    <form method="post" action="/lotes.edit"> 
+        <input type="id" name="id" value="1">
+        <input type="pedido" name="pedido" value="1234" placeholder="pedido">
+        <input type="username" name="username" value="akira" placeholder="username">
+        <input type="submit" name="grava" value="grava">
+
+
+    </form>
 </div>
 
 <%- include inc/footer %>
