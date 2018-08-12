@@ -1,7 +1,54 @@
 <%- include inc/header %>
+<% var modulo  = 'parametros' %>
+<div class="col col-lg-12 col-sm-12 col-xl-12">
+    <div class="">
+        <a href="/<%= modulo %>/cad" class="btn btn-primary btn-sm"><i class="icon-plus"></i></a>
+        <a href="/<%= modulo %>" class="btn btn-secondary btn-sm"><i class="icon-list"></i></a>
+    </div>
+    <br>
 
-<div class="container-fluid" >
-    Configuraçoes
+
+
+
+    <% if(pg === 'cad'){ %>
+
+    <% }else{ %>
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th width="1%">#</th>
+                <th>Nome</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th colspan="2"  width="2%">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% if(dados){ %>
+        <% dados.forEach(linhas => {%>
+            <tr>
+                <td><%= linhas.id %></td>
+                <td><%= linhas.nome %></td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+                <td><a href="/<%= modulo %>.edit/<%= linhas.id %>"><i class="icon-pencil-square-o"></i></a></td>
+                <td><a href="/<%= modulo %>.dell/<%= linhas.id %>"><i class="icon-minus-square-o text-danger"></i></a></td>
+            </tr>
+        <% }) %>
+        <% } %>          
+        </tbody>
+    </table>
+
+    <% } %>
 </div>
 
 <%- include inc/footer %>
