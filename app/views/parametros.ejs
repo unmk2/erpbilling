@@ -1,4 +1,11 @@
-<%- include inc/header %>
+<div class="container-fluid">
+        <% include inc/header %>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#docs').DataTable();
+        } );
+    </script>
 <% var modulo  = 'parametros' %>
 <div class="col col-lg-12 col-sm-12 col-xl-12">
     <div class="">
@@ -7,45 +14,119 @@
     </div>
     <br>
 
-    <% if(pg === 'cad'){ %>
+    <% if(pg === 'cad' || pg === 'edit'){ %>
+        <form method="post" action="/<%= modulo %>.add">
+        <div class="col">
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="img" >Imagem</label>
+                        <input type="file" class="form-control" name="img" id="img" placeholder="img">
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="msg" >Mensagem</label>
+                        <textarea type="textarea" class="form-control" name="msg" id="msg" placeholder="Mensagem"></textarea>
+                    </div>
+                </div>
 
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="site" >Site</label>
+                        <input type="text" class="form-control" name="site" id="site" placeholder="site">
+                    </div>
+                </div>
+                <div class="col-4">
+                        <div class="form-group">
+                            <label for="folhas" >Folhas</label>
+                            <input type="number" class="form-control" name="folhas" id="folhas" placeholder="Folhas">
+                    </div>
+                </div>
+                <div class="col-4">
+                        <div class="form-group">
+                            <label for="fonte" >Fonte</label>
+                            <input type="number" class="form-control" name="fonte" id="fonte" placeholder="Fonte">
+                    </div>
+                </div>
+                <div class="col-4">
+                        <div class="form-group">
+                            <label for="folhas" >Cor da Fonte</label>
+                            <input type="color" class="form-control" name="folhas" id="folhas" placeholder="Folhas">
+                    </div>
+                </div>
+
+
+                    
+                
+              
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary">Gravar</button>
+                </div>
+            </div>
+        </div>
+            
+        </form>
     <% }else{ %>
-<script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    } );
-</script>
-<table id="example" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th width="1%">#</th>
-                <th>Nome</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-                <th colspan="2"  width="2%">Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-        <% if(dados){ %>
-        <% dados.forEach(linhas => {%>
+        <table id="docs" class="display table" style="width:100%">
+            <thead>
+                <tr>
+                        <th width="1%">#</th>
+                        <th>Nome</th>
+                        <th>Imagem</th>
+                        <th>Msg</th>
+                        <th>Site</th>
+                        <th>Folhas</th>
+                        <th>Cor</th>
+                        <th>lw</th>
+                        <th>lh</th>
+                        <th>Dinheiro</th>
+                        <th>Tipo</th>
+                        <th>Status</th>
+                    <th width="2%">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+        <% if(dados){  %>
+            <% dados.forEach(linhas =>{ %>
             <tr>
                 <td><%= linhas.id %></td>
                 <td><%= linhas.nome %></td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-                <td><a href="/<%= modulo %>.edit/<%= linhas.id %>"><i class="icon-pencil-square-o"></i></a></td>
-                <td><a href="/<%= modulo %>.dell/<%= linhas.id %>"><i class="icon-minus-square-o text-danger"></i></a></td>
+                <td><%= linhas.img %></td>
+                <td><%= linhas.msg %></td>
+                <td><%= linhas.site %></td>
+                <td><%= linhas.qtd_folha %></td>
+                <td><%= linhas.cor_fonte %></td>
+                <td><%= linhas.lw %></td>
+                <td><%= linhas.lh %></td>
+                <td><%= linhas.dinheiro %></td>
+                <td><%= linhas.tipo %></td>
+                <td><%= linhas.st %></td>
+                <td><a href="/<%= modulo %>.edit/<%= linhas.id %>"> <i class="icon-pencil-square-o"></i> </a>
+                <a href="/<%= modulo %>.dell/<%= linhas.id %>"><i class="icon-minus-square-o text-danger"></i></a></td>
             </tr>
-        <% }) %>
-        <% } %>          
+            <% }); %>
+        <%}else{ %>
         </tbody>
+        <% } %>
     </table>
-
     <% } %>
 </div>
 
-<%- include inc/footer %>
+<% include inc/footer %>
+
+
+
+
+
+
+    
