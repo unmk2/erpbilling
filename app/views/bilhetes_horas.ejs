@@ -1,7 +1,49 @@
 <%- include inc/header %>
+<% var modulo  = 'bilhetes_horas' %>
+<div class="col col-lg-12 col-sm-12 col-xl-12">
+    <div class="">
+        <a href="/<%= modulo %>/cad" class="btn btn-primary btn-sm"><i class="icon-plus"></i></a>
+        <a href="/<%= modulo %>" class="btn btn-secondary btn-sm"><i class="icon-list"></i></a>
+    </div>
+    <br>
+    <% if(pg === 'cad'){ %>
+    <form method="post" action="/<%= modulo %>.add">
+        <div class="col">
+            <div class="row">
+                <div class="col-2">
+                    <label for="nome">Parametro</label>
+                    <select class="form-control">
+                        <option value="">-- Selecione --</option>
+                        <% parametros.forEach(linhas => { %>
+                        <option value="<%= linhas.id %>"><%= linhas.nome %></option>
+                        <% }) %>
+                    </select> 
+                </div>
 
-<div class="container-fluid" >
-    Bilhetes Horas
-</div>
+                <div class="col-1">
+                    <label for="lote">Lote</label>
+                    <input type="text"
+                        class="form-control" name="lote" id="lote" placeholder="Lote">   
+                </div>
+                
+                <div class="col-1">
+                    <label for="lote">Lote</label>
+                    <input type="text"
+                        class="form-control" name="lote" id="lote" placeholder="Lote">   
+                </div>
 
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary">Grava</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <% }else{ %>
+        <div class="container-fluid" >
+            Bilhetes Horas
+        </div>
+    <% } %>
 <%- include inc/footer %>
