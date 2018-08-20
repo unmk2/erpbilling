@@ -15,5 +15,8 @@ module.exports.ExeUpdate = (app, base, dados, termos) => {
     var resultado = campos.join(",");
 
     var sql = `UPDATE ${base} SET ${resultado} ${termos} `;
-    return conn.query(sql);
+    
+    var qr_dados = conn.query(sql);
+    conn.dispose();
+    return qr_dados;
 }

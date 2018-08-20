@@ -7,5 +7,7 @@ module.exports.ExeReader = (app, base,query = ``,termos = ``) => {
         var t = termos;
     }
     
-    return conn.queueQuery(`SELECT ${t} FROM ${base} ${query}`)();
+    var dados = conn.queueQuery(`SELECT ${t} FROM ${base} ${query}`)();
+    conn.dispose();
+    return dados;
 }
