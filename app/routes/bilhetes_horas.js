@@ -34,13 +34,18 @@ module.exports = (app) =>{
         console.log('numero ' + dados_config[0].numero);
         console.log('maiuscula ' + dados_config[0].maiuscula);
         console.log('simbolo ' + dados_config[0].simbolo);
+        const datatime = require('node-datetime');
+        var datac = datatime.create().format('Y-m-d');
+        var dataclote = datatime.create().format('YmdHMS');
+        var horac = datatime.create().format('H:M:S');
+        var lote  = dados.lote;
         var obj = [];
         for(var i = 0;dados.qtd > i;i++){
             
             var rand = app.app.controlles.randon.ExeRandon(app, dados.tamanho, dados_config[0].numero, dados_config[0].maiuscula, dados_config[0].simbolo);
 
 
-            var resultado = i + ' ' + rand + ' ' + plano_conf[0].groupname + ' ' + tempo;
+            var resultado = 'ID ' + i + ' LOTE ' + lote + '-' + dataclote  + ' RAND ' + rand + ' PLANO ' + plano_conf[0].groupname + ' TEMPO ' + tempo + ' ID-plano ' + plano_conf[0].id + ' DATAC ' + datac + ' HORAC ' + horac + ' VALOR_PLANO ' + plano_conf[0].valor;
             obj.push(resultado);
         }
         dados.obj = obj;
