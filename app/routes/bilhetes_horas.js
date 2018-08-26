@@ -39,13 +39,17 @@ module.exports = (app) =>{
         var dataclote = datatime.create().format('YmdHMS');
         var horac = datatime.create().format('H:M:S');
         var lote  = dados.lote;
+        var pedido = app.app.controlles.randon.ExeRandon(app,10,1,0,0);
         var obj = [];
         for(var i = 0;dados.qtd > i;i++){
             
             var rand = app.app.controlles.randon.ExeRandon(app, dados.tamanho, dados_config[0].numero, dados_config[0].maiuscula, dados_config[0].simbolo);
 
 
-            var resultado = 'ID ' + i + ' LOTE ' + lote + '-' + dataclote  + ' RAND ' + rand + ' PLANO ' + plano_conf[0].groupname + ' TEMPO ' + tempo + ' ID-plano ' + plano_conf[0].id + ' DATAC ' + datac + ' HORAC ' + horac + ' VALOR_PLANO ' + plano_conf[0].valor;
+            var resultado = 'ID ' + i + ' LOTE ' + lote + '-' + dataclote  + ' RAND ' + rand + ' PLANO ' + plano_conf[0].groupname + ' TEMPO ' + tempo + ' ID-plano ' + plano_conf[0].id + ' DATAC ' + datac + ' HORAC ' + horac + ' VALOR_PLANO ' + plano_conf[0].valor+ ' PEDIDO '+ pedido;
+
+            app.app.controlles.bilhetes_hotas.CreateCards(app, lote, rand, tempo, datac, horac, plano_conf[0].id, plano_conf[0].valor, pedido);
+
             obj.push(resultado);
         }
         dados.obj = obj;
