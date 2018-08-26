@@ -11,8 +11,8 @@
         <div class="col">
             <div class="row">
                 <div class="col-2">
-                    <label for="nome">Parametro</label>
-                    <select class="form-control">
+                    <label for="param">Parametro</label>
+                    <select name="param" id="param" class="form-control">
                         <option value="">-- Selecione --</option>
                         <% parametros.forEach(linhas => { %>
                         <option value="<%= linhas.id %>"><%= linhas.nome %></option>
@@ -25,11 +25,43 @@
                     <input type="text"
                         class="form-control" name="lote" id="lote" placeholder="Lote">   
                 </div>
-                
-                <div class="col-1">
-                    <label for="lote">Lote</label>
+
+                <div class="col-2">
+                    <label for="tempo">Tempo <small class="text-danger">Em minutos</small></label>
                     <input type="text"
-                        class="form-control" name="lote" id="lote" placeholder="Lote">   
+                        class="form-control" required name="tempo" id="tempo" placeholder="Tempo">   
+                </div>
+
+                <div class="col-1">
+                    <label for="qtd">Quantidade</label>
+                    <input type="number"
+                        class="form-control" name="qtd" id="qtd" placeholder="Quantidade">   
+                </div>
+
+
+                <div class="col-2">
+                    <label for="plano">Plano</label>
+                    <select name="plano" id="plano" required class="form-control">
+                        <option value="">-- Selecione --</option>
+                        <% planos.forEach(linhas => { %>
+                        <option value="<%= linhas.id %>"><%= linhas.nome %></option>
+                        <% }) %>
+                    </select> 
+                </div>
+
+                <div class="col-1">
+                    <label for="tamanho">Tamanho</label>
+                    <select name="tamanho" id="tamanho" required class="form-control">
+                        <option value="">0</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select> 
                 </div>
 
             </div>

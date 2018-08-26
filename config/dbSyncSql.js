@@ -5,11 +5,10 @@ var connMysqlSync = function () {
 
     return new MySql({
         //host      : '165.227.55.153',
-        host: 'localhost',
+        host: '127.0.0.1',
         user: 'root',
-        password: '1288',
+        password: '455ttte',
         database: 'billing'
-        
     })
 
 }

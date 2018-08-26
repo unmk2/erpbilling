@@ -1,5 +1,5 @@
-module.exports.ReaderParametros = (app) =>{
-    return app.app.model.reader.ExeReader(app,`configuracoes`);
+module.exports.ReaderParametros = (app,parametros = ``) =>{
+    return app.app.model.reader.ExeReader(app, `configuracoes`, parametros);
 }
 module.exports.CreateParametros = (app,dados) => {
     
