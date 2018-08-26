@@ -24,12 +24,12 @@
                         <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
                     </div>
                 </div>
-                <div class="col-4">
+                <!-- <div class="col-4">
                     <div class="form-group">
                         <label for="img" >Imagem</label>
                         <input type="file" class="form-control" name="img" id="img" placeholder="img">
                     </div>
-                </div>
+                </div> -->
                 
                 <div class="col-4">
                     <div class="form-group">
@@ -46,27 +46,93 @@
                 </div>
                 <div class="col-4">
                         <div class="form-group">
-                            <label for="folhas" >Folhas</label>
-                            <input type="number" class="form-control" name="folhas" id="folhas" placeholder="Folhas">
+                            <label for="qtd_folha" >Folhas</label>
+                            <input type="number" min="1" class="form-control" name="qtd_folha" id="qtd_folha" placeholder="Folhas">
                     </div>
                 </div>
                 <div class="col-4">
                         <div class="form-group">
                             <label for="fonte" >Fonte</label>
-                            <input type="number" class="form-control" name="fonte" id="fonte" placeholder="Fonte">
+                            <input type="number" min="1" class="form-control" name="fonte" id="fonte" placeholder="Fonte">
                     </div>
                 </div>
                 <div class="col-1">
                         <div class="form-group">
-                            <label for="folhas" >Cor</label>
-                            <input type="color" class="form-control" name="folhas" id="folhas" placeholder="Folhas"  >
+                            <label for="cor" >Cor</label>
+                            <input type="color" min="1"  name="cor_fonte" id="cor" placeholder="Cor">
                     </div>
                 </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="largura" >Largura</label>
+                        <input type="number" min="1" class="form-control" value="1" name="lw" id="largura" placeholder="Largura">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="altura" >Altura</label>
+                        <input type="number"  min="1" class="form-control" value="1" name="lh" id="altura" placeholder="Altura">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="dinheiro" >Dinheiro</label>
+                        <input type="number" min="1" class="form-control" value="1" name="dinheiro" id="dinheiro" placeholder="Dinheiro">
+                    </div>
+                </div>
+               
+                <div class="col-2">
+                    <div class="switch">
+                            <label for="qr" >QR Code</label>
+                            <br>
+                            <input type="checkbox" class="switch" value="1" value="1" name="qr" id="qr" >
+                            <label for="qr" ></label> 
+                    </div>                       
+                </div>
+                <div class="col-2">
+                        <div class="switch">
+                            <label for="numero" >Numero</label>
+                                <br>
+                                <input type="checkbox" class="switch" value="1" name="numero" id="numero" >
+                            <label for="numero" ></label> 
+                        </div>                       
+                </div>
 
-
-                    
+                <div class="col-2">
+                        <div class="switch">
+                            <label for="maiuscula" >Maiusculo</label>
+                                <br>
+                                <input type="checkbox" class="switch" value="1" name="maiuscula" id="maiuscula" >
+                            <label for="maiuscula" ></label> 
+                        </div>                       
+                </div>
+                <div class="col-2">
+                        <div class="switch">
+                            <label for="minuscula" >Minusculo</label>
+                                <br>
+                                <input type="checkbox" class="switch" value="1" name="minuscula" id="minuscula" >
+                            <label for="minuscula" ></label> 
+                        </div>                       
+                </div>
+                <div class="col-2">
+                        <div class="switch">
+                            <label for="simbolo" >Simbolo</label>
+                                <br>
+                                <input type="checkbox" class="switch" value="1" name="simbolo" id="simbolo" >
+                            <label for="simbolo" ></label> 
+                        </div>                       
+                </div>
+                <div class="col-2">
+                        <div class="switch">
+                            <label for="st" >st</label>
+                                <br>
+                                <input type="checkbox" class="switch" value="1" name="st" id="st" >
+                            <label for="st" ></label> 
+                        </div>                       
+                </div>
                 
-              
+
+
             </div>
             <div class="row">
                 <div class="col-4">
