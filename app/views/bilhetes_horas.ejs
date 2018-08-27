@@ -1,6 +1,11 @@
 <div class="container-fluid">
 <%- include inc/header %>
 <% var modulo  = 'bilhetes_horas' %>
+<script>
+    $(document).ready(function() {
+        $('#docs').DataTable();
+    } );
+</script>
 <div class="col col-lg-12 col-sm-12 col-xl-12">
     <div class="">
         <a href="/<%= modulo %>/cad" class="btn btn-primary btn-sm"><i class="icon-plus"></i></a>
@@ -75,9 +80,33 @@
         </div>
     </form>
     <% }else{ %>
-        <div class="container-fluid" >
-            Bilhetes Horas
-        </div>
+        <table id="docs" class="display table" style="width:100%">
+            <thead>
+                <tr>
+                    <th width="1%">#</th>
+                    <th>Bilhete</th>
+                    <th>Data</th>
+                    <th>Tempo</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+        <% if(dados){  %>
+            <% dados.forEach(linhas =>{ %>
+            <tr>
+                <td><%= linhas.id %></td>
+                <td><%= linhas.bilhete %></td>
+                <td><%= linhas.datac %></td>
+                <td><%= linhas.tempo %></td>
+                <td><%= linhas.valor_plano %></td>
+                <td><%= linhas.st %></td>
+            </tr>
+            <% }); %>
+        <%}else{ %>
+        </tbody>
+        <% } %>
+    </table>
     <% } %>
 </div>
 <%- include inc/footer %>

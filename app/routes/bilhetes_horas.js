@@ -5,6 +5,7 @@ module.exports = (app) =>{
         /** Passamos este objeto para a nossa viewl para que amesma possa montar o menu */
         var men = app.app.controlles.menu.menu(app, req, res);
 
+        var dados = app.app.controlles.bilhetes_horas.ReadBilhete(app);
 
         if(pg == 'cad'){
             var parametros = app.app.controlles.parametros.ReaderParametros(app);
@@ -13,7 +14,7 @@ module.exports = (app) =>{
             var parametros = null;
         }
 
-        res.render('bilhetes_horas', { menu: men, pg: pg, parametros: parametros, planos: planos});
+        res.render('bilhetes_horas', { menu: men, pg: pg, parametros: parametros, planos: planos,dados:dados});
 
     });
     app.post('/bilhetes_horas.add', (req, res) => {
@@ -48,7 +49,7 @@ module.exports = (app) =>{
 
             var resultado = 'ID ' + i + ' LOTE ' + lote + '-' + dataclote  + ' RAND ' + rand + ' PLANO ' + plano_conf[0].groupname + ' TEMPO ' + tempo + ' ID-plano ' + plano_conf[0].id + ' DATAC ' + datac + ' HORAC ' + horac + ' VALOR_PLANO ' + plano_conf[0].valor+ ' PEDIDO '+ pedido;
 
-            app.app.controlles.bilhetes_hotas.CreateCards(app, lote, rand, tempo, datac, horac, plano_conf[0].id, plano_conf[0].valor, pedido);
+            app.app.controlles.bilhetes_horas.CreateCards(app, lote, rand, tempo, datac, horac, plano_conf[0].id, plano_conf[0].valor, pedido);
 
             obj.push(resultado);
         }
